@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<nav class="navbar navbar-expand-sm bg-danger navbar-dark">
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark mb-5">
   <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>">Home</a> --%>
   <a class="navbar-brand" href="http://192.168.50.70:9090/javaclass/">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="#">Guest</a>
       </li>
@@ -29,5 +29,6 @@
 	      </div>
 	    </li>
     </ul>
+    <button type="button" class="btn btn-warning btn-sm" onclick="javascript:location.href='<%=request.getContextPath()%>/member/login.jsp'">로그인</button>
   </div>  
 </nav>
