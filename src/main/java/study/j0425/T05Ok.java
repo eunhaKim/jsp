@@ -11,13 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
 @WebServlet("/j0425/T05Ok")
-public class T05Ok extends HttpServlet{
+public class T05Ok extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html; charset=utf-8"); // 브라우저보낼때 한글처리
-		request.setCharacterEncoding("utf-8"); // 가져올때 한글처리
+		response.setContentType("text/html; charset=utf-8");
+		request.setCharacterEncoding("utf-8");
 		
-		// 	Front에서 넘어온 값들을 변수에 담아서 처리한다.
 		String mid = request.getParameter("mid")==null ? "" : request.getParameter("mid");
 		String pwd = request.getParameter("pwd")==null ? "" : request.getParameter("pwd");
 		
@@ -35,8 +34,8 @@ public class T05Ok extends HttpServlet{
 		}
 		else {
 			out.println("<script>");
-			out.println("alert('로그인 실패~~~');");
-			out.println("location.href='"+request.getContextPath()+"/study/0425/t05Main.jsp';");
+			out.println("alert('로그인 실패~~');");
+			out.println("location.href='"+request.getContextPath()+"/study/0425/t05.jsp'");
 			out.println("</script>");
 		}
 	}

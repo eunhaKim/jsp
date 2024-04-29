@@ -7,16 +7,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-//@WebServlet("/Test2") // 컨트롤러, url맵핑 주소
-//@WebServlet("/T2") // 컨트롤러, url맵핑 주소
-@WebServlet("/T22222") // 컨트롤러, url맵핑 주소
+//@WebServlet("/Test2")
+//@WebServlet("/T2")
+@WebServlet("/T22222")
 public class Test2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println("이곳은 Get 메소드 입니다.");
+		System.out.println("이곳은 Get메소드 입니다.");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -12,10 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
 @WebServlet("/j0425/T13Ok")
-public class T13Ok extends HttpServlet{
+public class T13Ok extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 405에러(전송방식 get,post에 의한 에러) 방지됨
 		String mid = request.getParameter("mid")==null ? "" : request.getParameter("mid");
 		String pwd = request.getParameter("pwd")==null ? "" : request.getParameter("pwd");
 		String loginFlag = request.getParameter("loginFlag")==null ? "" : request.getParameter("loginFlag");
@@ -39,5 +38,6 @@ public class T13Ok extends HttpServlet{
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 			dispatcher.forward(request, response);
 		}
+		
 	}
 }

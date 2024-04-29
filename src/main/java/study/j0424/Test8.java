@@ -17,6 +17,7 @@ public class Test8 extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 //		response.getWriter().append("1.Served at: ").append(request.getContextPath());
 		System.out.println("이곳은 Get 메소드 입니다.");
+		
 		PrintWriter out = response.getWriter();
 		out.println("<p><a href='/javaclass/study/0424/test8.jsp'>돌아가기</a></p>");
 	}

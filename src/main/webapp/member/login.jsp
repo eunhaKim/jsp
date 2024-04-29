@@ -4,11 +4,13 @@
 	String mid = "";
 	String pwd = "";
 	String keepValue = "";
-	for (Cookie c : cookies) {
-		if(c.getName().equals("cMid")) mid = c.getValue();
-		if(c.getName().equals("cPwd")) pwd = c.getValue();
-		if(c.getName().equals("cKeepValue")) keepValue = c.getValue();
-	} 
+	if (cookies != null) {
+		for (Cookie c : cookies) {
+			if(c.getName().equals("cMid")) mid = c.getValue();
+			if(c.getName().equals("cPwd")) pwd = c.getValue();
+			if(c.getName().equals("cKeepValue")) keepValue = c.getValue();
+		} 
+	}
 %>
 <!DOCTYPE html>
 <html>

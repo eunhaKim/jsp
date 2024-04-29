@@ -1,4 +1,4 @@
-package study.j0424;
+package study.j0427;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,26 +8,25 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
-@WebServlet("/T10")
-public class Test10 extends HttpServlet {
-	
+@WebServlet("/j0427/Logout")
+public class Logout extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
 		
-		int su = Integer.parseInt(request.getParameter("su"));
-		
-		int tot = 0;
-		for(int i=1; i<=su; i++) {
-			tot += i;
-		}
-		System.out.println("tot : " + tot);
+		HttpSession session = request.getSession();
+		String mid = (String) session.getAttribute("sMid");
+		session.invalidate();
 		
 		PrintWriter out = response.getWriter();
-		out.println("이곳은 서블릿에서 보냅니다.");
-		out.println("<p><input type='button' value='돌아가기' onclick='location.href=\"/javaclass/study/0424/test10Ok.jsp?tot="+tot+"\"' ></p>");
+		
+		out.print("<script>");
+		out.print("alert('"+mid+"님 로그아웃 되었습니다.');");
+		out.print("location.href='"+request.getContextPath()+"/study/0428_Login/login.jsp';");
+		out.print("</script>");
 	}
-	
 }

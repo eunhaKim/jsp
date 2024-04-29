@@ -7,14 +7,17 @@
 	if(mid.equals("admin") && pwd.equals("1234")){
 		if(keepValue.equals("true")){
 			Cookie cookieMid = new Cookie("cMid", mid);
+			cookieMid.setPath("/");
 		  cookieMid.setMaxAge(60*60*24);		// 쿠키의 만료시간(초) : 1일 = 60 * 60 * 24 = ?
 		  response.addCookie(cookieMid);
 		  
 		  Cookie cookiePwd = new Cookie("cPwd", pwd);
+		  cookiePwd.setPath("/");
 		  cookiePwd.setMaxAge(60*60*24);
 		  response.addCookie(cookiePwd);
 		  
 		  Cookie cookieKeepValue = new Cookie("cKeepValue", keepValue);
+		  cookieKeepValue.setPath("/");
 		  cookieKeepValue.setMaxAge(60*60*24);
 		  response.addCookie(cookieKeepValue);
 		}
