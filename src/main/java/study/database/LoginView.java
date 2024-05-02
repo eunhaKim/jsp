@@ -1,4 +1,4 @@
-package study.j0430;
+package study.database;
 
 import java.io.IOException;
 
@@ -8,24 +8,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
-@WebServlet("/j0430/T03_init")
-public class T03_init extends HttpServlet {
+@WebServlet("/study/database/LoginView")
+public class LoginView extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("이곳은 T03_init 서블릿 입니다.");
+		int idx = request.getParameter("idx")==null ? 0 : Integer.parseInt(request.getParameter("idx"));
 		
-		String logoName = getServletContext().getInitParameter("logoName");
-		String homeAddress = getServletContext().getInitParameter("homeAddress");
+		LoginDAO dao = new LoginDAO();
 		
-		HttpSession session = request.getSession();
+		LoginVO vo = dao.getLoginIdxSearch(idx);
 		
-		session.setAttribute("sLogoName", logoName);
-		session.setAttribute("sHomeAddress", homeAddress);
+		request.setAttribute("vo", vo);
 		
-		String viewPage = "/study/0430_web_xml/init/t03_init.jsp";
+		String viewPage = "/study/database/view.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 	}

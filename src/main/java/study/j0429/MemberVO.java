@@ -7,8 +7,6 @@ public class MemberVO {
 	private String job;
 	private String address;
 	
-	
-	
 	public String getName() {
 		return name;
 	}
@@ -45,5 +43,4 @@ public class MemberVO {
 		return "MemberVO [name=" + name + ", age=" + age + ", gender=" + gender + ", job=" + job + ", address=" + address
 				+ "]";
 	}
-	
 }

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
 @WebServlet("/Javaclass")
-public class Javaclass extends HttpServlet{
+public class Javaclass extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// web.xml에 설정해둔 초기 변수/값을 가져온다.

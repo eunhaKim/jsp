@@ -26,7 +26,7 @@ public class T01Ok1 extends HttpServlet {
 		System.out.println("introduce : " + introduce);
 		
 		PrintWriter out = response.getWriter();
-		out.println("이곳은 T01Ok컬트롤러1 입니다.");
+		out.println("이곳은 T01Ok1컬트롤러 입니다.");
 		
 		request.setAttribute("msg", "T01Ok1에서 보냅니다");
 		

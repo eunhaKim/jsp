@@ -10,7 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
 @WebFilter("/*")
-public class EncodingFilter implements Filter{ // 한글필터(다국어가능..중국어..)
+public class EncodingFilter implements Filter {
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -18,6 +18,7 @@ public class EncodingFilter implements Filter{ // 한글필터(다국어가능..
 		response.setContentType("text/html; charset=utf-8");
 		
 		chain.doFilter(request, response);
+		
 	}
 
 }

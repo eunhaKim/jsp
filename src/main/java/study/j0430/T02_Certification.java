@@ -26,7 +26,7 @@ public class T02_Certification extends HttpServlet {
 		application.setAttribute("aCertification", aCertification);
 				
 		// 새로 발급된 aCertification 값을 출력해본다.
-		System.out.println("새로발급된 aCertification : " + application.getAttribute("aCertification"));
+		System.out.println("기존 aCertification : " + application.getAttribute("aCertification"));
 		
 		request.setAttribute("message", "인증코드가 발급되었습니다.");
 		

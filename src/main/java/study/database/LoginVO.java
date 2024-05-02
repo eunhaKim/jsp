@@ -9,7 +9,6 @@ public class LoginVO {
 	private String gender;
 	private String address;
 	
-	
 	public int getIdx() {
 		return idx;
 	}
@@ -58,6 +57,4 @@ public class LoginVO {
 		return "LoginVO [idx=" + idx + ", mid=" + mid + ", pwd=" + pwd + ", name=" + name + ", age=" + age + ", gender="
 				+ gender + ", address=" + address + "]";
 	}
-	
-	
 }

@@ -10,10 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet("/database/JoinOk")
-public class JoinOk extends HttpServlet {
+@WebServlet("/database/UpdateOk")
+public class UpdateOk extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int idx = request.getParameter("idx")==null ? 0 : Integer.parseInt(request.getParameter("idx"));
 		String mid = request.getParameter("mid")==null ? "" : request.getParameter("mid");
 		String pwd = request.getParameter("pwd")==null ? "" : request.getParameter("pwd");
 		String name = request.getParameter("name")==null ? "" : request.getParameter("name");
@@ -23,6 +24,7 @@ public class JoinOk extends HttpServlet {
 		
 		LoginVO vo = new LoginVO();
 		
+		vo.setIdx(idx);
 		vo.setMid(mid);
 		vo.setPwd(pwd);
 		vo.setName(name);
@@ -32,19 +34,19 @@ public class JoinOk extends HttpServlet {
 		
 		LoginDAO dao = new LoginDAO();
 		
-		int res = dao.setLoginInput(vo);
+		int res = dao.setLoginUpdate(vo);
 		
 		PrintWriter out = response.getWriter();
 		if(res != 0) {
 			out.print("<script>");
-			out.print("alert('회원에 가입되셨습니다.');");
-			out.print("location.href='"+request.getContextPath()+"/study/database/login.jsp';");
+			out.print("alert('회원정보가 수정되었습니다.');");
+			out.print("location.href='"+request.getContextPath()+"/study/database/LoginView?idx="+idx+"';");
 			out.print("</script>");
 		}
 		else {
 			out.print("<script>");
-			out.print("alert('회원 가입 실패~~');");
-			out.print("location.href='"+request.getContextPath()+"/study/database/join.jsp';");
+			out.print("alert('회원정보 수정 실패~~');");
+			out.print("location.href='"+request.getContextPath()+"/study/database/LoginView?idx="+idx+"';");
 			out.print("</script>");
 		}
 	}

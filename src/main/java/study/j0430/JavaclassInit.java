@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-//@WebServlet("/JavaclassInit") // web.xml에서 호출하는 주소명
-@WebServlet(urlPatterns="/GreenJavaclassInit",initParams={@WebInitParam(name="mid",value="admin"),@WebInitParam(name="pwd",value="1234"),@WebInitParam(name="className",value="인사과")})
-public class JavaclassInit extends HttpServlet{
+//@WebServlet("/JavaclassInit")		// web.xml에서 호출하는 주소명
+@WebServlet(urlPatterns="/GreenJavaclassInit", initParams= {@WebInitParam(name="mid", value="hkd1234"),@WebInitParam(name="pwd", value="1234"),@WebInitParam(name="className", value="영업과")})
+public class JavaclassInit extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// web.xml에 설정해둔 초기 변수/값을 가져온다.

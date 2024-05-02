@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class T01Ok2 extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//한글처리하지 않음...(Filter에서 한글처리하려고 한다.)
+		// 한글처리하지 않음..(Filter에서 한글처리하려고 한다.)
 		
 		String content = request.getParameter("content")==null ? "" : request.getParameter("content");
 		String introduce = request.getParameter("introduce")==null ? "" : request.getParameter("introduce");
@@ -25,7 +25,7 @@ public class T01Ok2 extends HttpServlet {
 		System.out.println("introduce : " + introduce);
 		
 		PrintWriter out = response.getWriter();
-		out.println("이곳은 T01Ok컬트롤러2 입니다.");
+		out.println("이곳은 T01Ok2컬트롤러 입니다.");
 		
 		request.setAttribute("msg", "T01Ok2에서 보냅니다");
 		

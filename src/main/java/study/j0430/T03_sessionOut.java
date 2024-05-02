@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
 @WebServlet("/j0430/T03_sessionOut")
-public class T03_sessionOut extends HttpServlet{
+public class T03_sessionOut extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
