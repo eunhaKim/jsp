@@ -45,6 +45,14 @@
 			    <a class="dropdown-item" href="<%=request.getContextPath()%>/study/database/LoginList">데이터베이스연습</a>
 	      </div>
 	    </li>
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+	        Study2
+	      </a>
+	      <div class="dropdown-menu">
+	        <a class="dropdown-item" href="${ctp}/study/password/passCheck.jsp">비밀번호암호화</a>
+	      </div>
+	    </li>
 	    <% } %>
 	    <li class="nav-item">
 	    <% if(!mid_.equals("")){ %>
