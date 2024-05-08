@@ -55,6 +55,9 @@
 	        <a class="dropdown-item" href="${ctp}/mapping/test2.do">확장자매핑연습</a>
 	        <a class="dropdown-item" href="${ctp}/mapping/test3.do3">확장자매핑연습3</a>
 	        <a class="dropdown-item" href="${ctp}/mapping/test4.do4">확장자매핑연습4</a>
+	        <a class="dropdown-item" href="${ctp}/ajaxTest1.st">AJAX연습(일반)</a>
+	        <a class="dropdown-item" href="${ctp}/ajaxTest2.st">AJAX연습(응용)</a>
+	        <a class="dropdown-item" href="${ctp}/ajaxTest3.st">AJAX연습(회원관리)</a>
 	      </div>
 	    </li>
 	    <% } %>

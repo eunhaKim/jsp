@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet("*.do4")
-public class Test4Controller extends HttpServlet{
+@WebServlet("*.do5")
+public class Test5Controller extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Test4Interface command = null;
@@ -21,7 +21,7 @@ public class Test4Controller extends HttpServlet{
 		
 		String com = uri.substring(uri.lastIndexOf("/")+1, uri.lastIndexOf("."));
 		
-		if(com.equals("test4")) {
+		if(com.equals("test5")) {
 			
 			viewPage += com + ".jsp";
 		}
@@ -37,7 +37,7 @@ public class Test4Controller extends HttpServlet{
 		else if(com.equals("inputOk")) {
 			command = new Test4InputOkCommand();
 			command.execute(request, response);
-			viewPage = "/include/message.jsp";
+			viewPage = "/WEB-INF/common/message.jsp";
 		}
 		else if(com.equals("update")) {
 			command = new Test4UpdateCommand();
@@ -47,7 +47,7 @@ public class Test4Controller extends HttpServlet{
 		else if(com.equals("updateOk")) {
 			command = new Test4UpdateOkCommand();
 			command.execute(request, response);
-			viewPage = "/include/message.jsp";
+			viewPage = "/WEB-INF/common/message.jsp";
 		}
 		else if(com.equals("delete")) {
 			command = new Test4DeleteCommansd();
@@ -57,7 +57,7 @@ public class Test4Controller extends HttpServlet{
 		else if(com.equals("deleteOk")) {
 			command = new Test4DeleteOkCommand();
 			command.execute(request, response);
-			viewPage = "/include/message.jsp";
+			viewPage = "/WEB-INF/common/message.jsp";
 		}
 		else if(com.equals("search")) {
 			command = new Test4Search();
