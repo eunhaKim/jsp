@@ -39,11 +39,11 @@ public class AjaxIdCheck2_4 extends HttpServlet {
 		
 		System.out.println("map : " + map);
 		
-		// map 형식의 자료를 JSON형식으로 변환처리한다.(https://code.google.com/archive/p/json-simple/downloads)
+		// map형식의 자료를 JSON형식으로 변환처리한다.
 		JSONObject jObj = new JSONObject(map);
 		System.out.println("jObj : " + jObj);
-
-		// 여러개의 vo 객체를 json배열로 담아서 처리한다.
+		
+		// 여러개의 vo객체를 JSON배열로 담아서 처리한다.
 		JSONArray jArray = new JSONArray();
 		
 		jArray.add(jObj);
@@ -61,7 +61,6 @@ public class AjaxIdCheck2_4 extends HttpServlet {
 		System.out.println("jArray : " + jArray);
 		
 		response.getWriter().write(jArray.toString());
-		
 		
 	}
 }

@@ -17,6 +17,7 @@ public class GuestDAO {
 	
 	public GuestDAO() {
 		String url = "jdbc:mysql://localhost:3306/javaclass";
+//		String url = "jdbc:mysql://localhost:3306/testDB?useUnicode=true&charset=UTF8mb4";
 		String user = "root";
 		String password = "1234";
 		
@@ -124,7 +125,7 @@ public class GuestDAO {
 		return res;
 	}
 
-	// 방명록 글의 총 건수 구하기
+	// 방명록글의 총 건수구하기
 	public int getTotRecCnt() {
 		int totRecCnt = 0;
 		try {

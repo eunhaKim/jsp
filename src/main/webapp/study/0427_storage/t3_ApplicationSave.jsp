@@ -5,7 +5,7 @@
 
 	String mid = request.getParameter("mid")==null ? "guest" : request.getParameter("mid");
 	String nickName = request.getParameter("nickName")==null ? "손님" : request.getParameter("nickName");
-	String name = request.getParameter("name")==null ? "손님" : request.getParameter("name");
+	String name = request.getParameter("name")==null ? "방문자" : request.getParameter("name");
 	
 	System.out.println("mid : " + mid);
 	System.out.println("nickName : " + nickName);

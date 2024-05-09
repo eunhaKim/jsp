@@ -38,17 +38,16 @@ public class AjaxIdCheck2_3 extends HttpServlet {
 		
 		System.out.println("map : " + map);
 		
-		// map 형식의 자료를 JSON형식으로 변환처리한다.(https://code.google.com/archive/p/json-simple/downloads)
+		// map형식의 자료를 JSON형식으로 변환처리한다.
 		JSONObject jObj = new JSONObject(map);
 		System.out.println("jObj : " + jObj);
 		
-		// json객체의 문자열로 변환...
+		// JSON객체의 문자열로 변환....
 		String str = jObj.toJSONString();
 		System.out.println("str : " + str);
 		
-//		response.getWriter().write(jObj+"");
-		response.getWriter().write(str);
-		
+		//response.getWriter().write(str);
+		response.getWriter().write(jObj + "");
 		
 	}
 }

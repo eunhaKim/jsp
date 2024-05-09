@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-//@WebServlet("/study/database/LoginList2")
+//@WebServlet("/study/database/LoginList")
 public class LoginList2 extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,7 +19,7 @@ public class LoginList2 extends HttpServlet {
 
 		String sortKey = request.getParameter("sortKey");
 		
-		ArrayList<LoginVO> vos = dao.getLoginList(sortKey,0,0);
+		ArrayList<LoginVO> vos = dao.getLoginList(sortKey, 0, 0);
 		
 		request.setAttribute("sortKey", sortKey);
 		request.setAttribute("vos", vos);

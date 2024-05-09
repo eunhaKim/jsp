@@ -19,11 +19,11 @@
     <table class="table table-bordered text-center">
       <tr>
         <th>제목</th>
-        <td><input type="text" name="title" value="Servlet 메소드 생명주기" autofocus required class="form-control"/></td>
+        <td><input type="text" name="title" value="Servlet 메소드 생명주기2" autofocus required class="form-control"/></td>
       </tr>
       <tr>
         <th>내용</th>
-        <td><textarea name="content" rows="6" class="form-control">서블릿 메소드 생명주기2 입니다.</textarea></td>
+        <td><textarea name="content" rows="6" class="form-control">서블릿 메소드 생명주기 입니다.2</textarea></td>
       </tr>
       <tr>
         <td colspan="2">

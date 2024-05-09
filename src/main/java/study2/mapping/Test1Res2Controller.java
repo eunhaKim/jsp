@@ -23,9 +23,10 @@ public class Test1Res2Controller extends HttpServlet {
 		request.setAttribute("su2", su2);
 //		request.setAttribute("hap", (su1 + su2));
 //		request.setAttribute("cha", (su1 - su2));
+		
 		Test1Service service = new Test1Service();
-		int hap = service.hap(su1,su2);
-		int cha = service.cha(su1,su2);
+		int hap = service.hap(su1, su2);
+		int cha = service.cha(su1, su2);
 		request.setAttribute("hap", hap);
 		request.setAttribute("cha", cha);
 		

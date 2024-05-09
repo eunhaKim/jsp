@@ -24,10 +24,11 @@ public class AjaxIdCheck1Command implements StudyInterface {
 			name = "찾는 자료가 없습니다.";
 		}
 		else {
-//			PrintWriter out = response.getWriter();
-//			out.println(name);
-//			out.write(name);
-			response.getWriter().write(name); // 헤더에 값을 실어 보낸다.
+			// PrintWriter out = response.getWriter();
+			// out.println(name);
+			// out.write(name);
+			
+			response.getWriter().write(name);
 		}
 	}
 }

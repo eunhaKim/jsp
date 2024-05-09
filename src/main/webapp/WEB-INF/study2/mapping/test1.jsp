@@ -18,10 +18,6 @@
     	else if(flag == 2) {
     		location.href = "${ctp}/mapping/test1";
     	}
-    	else if(flag == 3) {
-    		myform.action = "${ctp}/mapping/test1Res";
-    		myform.submit();
-    	}
     	else if(flag == 4) {
     		myform.action = "${ctp}/mapping/test1Res2";
     		myform.submit();

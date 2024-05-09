@@ -32,16 +32,16 @@
   </div>
   <hr/>
 	<%
-		if (user.equals("admin")){
-			out.println("관리자님 환영합니다.");
-		}
-		else {
-			out.println("고객님 환영합니다.");			
-		}
-	%>  
+	  if(user.equals("admin")) {
+	  	out.println("관리자님 환영합니다.");
+	  }
+	  else {
+	  	out.println("고객님 반갑습니다.");
+	  }
+	%>
   <hr/>
   <div>
-    <a href="t02_2.jsp" class="btn btn-warning">돌아가기</a> 
+    <a href="t02_1.jsp" class="btn btn-warning">돌아가기</a> 
   </div>
   
 </div>

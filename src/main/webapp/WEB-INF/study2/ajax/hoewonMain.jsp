@@ -154,9 +154,9 @@
     		success:function(res) {
     			if(res != "0") {
     				alert("회원 정보 수정 완료!!!");
-    				// location.reload(); // 전체화면 reload....
+    				// location.reload();  // 전체화면 reload...
     				
-    				$("#hoewonList").load(location.herf = ' #hoewonList') 	// 부분 reload()
+    				$("#hoewonList").load(location.href = ' #hoewonList');  // 부분 reload()
     			}
     			else {
     				alert("수정 실패~~");

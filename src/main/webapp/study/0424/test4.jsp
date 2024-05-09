@@ -16,10 +16,11 @@
   <h2>JSP 문법</h2>
   <hr/>
   <%
-  	System.out.println("이곳은 jsp문서 안입니다.(콘솔에 출력)");
-  	out.println("<p>이곳은 브라우저에 출력됩니다.</p>");
-  	out.println("<font size='5'><b>안녕하세요</b></font><br/>");
-  	out.println("<p class='text-center'>이곳은 브라우저에 출력됩니다.</p>");
+    System.out.println("이곳은 JSP 문서 안입니다.(콘솔에 출력)");
+    out.println("<p>이곳은 브라우저에 출력됩니다.</p>");
+    out.println("<font size='5'><b>안녕하세요</b></font><br/>");
+    out.println("<p class='text-center'>이곳은 브라우저에 출력됩니다.</p>");
+  
     int tot = 0;
   %>
   <h3>1~100까지 합을 10항씩 누적 출력</h3>

@@ -3,6 +3,6 @@
 	session.invalidate();
 %>
 <script>
-	alert("모든 세션이 삭제 되었습니다.");
-	location.href = "t2_Session.jsp"
+  alert("모든 세션이 삭제 되었습니다.");
+  location.href = "t2_Session.jsp";
 </script>

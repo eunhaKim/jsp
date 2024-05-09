@@ -28,7 +28,7 @@
     <a href="${ctp}/study/0429_JSTL/jstl3_vo.jsp" class="btn btn-warning">돌아가기</a>
   </div>
   <hr/>
-  <h2 class="text-center mt-5 mb-5">전체 회원 리스트</h2>
+  <h2 class="text-center">전체 회원 리스트</h2>
   <table class="table table-hover text-center">
     <tr class="table-dark text-dark">
     	<th>번호</th>
@@ -51,9 +51,7 @@
     <tr><td colspan="6" class="m-0 p-0"></td></tr>
   </table>
   <hr/>
-  
-  
-  <h2 class="text-center mt-5 mb-5">전체 회원 리스트2</h2>
+  <h2 class="text-center">전체 회원 리스트2</h2>
   <table class="table table-hover text-center">
     <tr class="table-dark text-dark">
     	<th>번호</th>
@@ -65,7 +63,7 @@
     </tr>
     <c:forEach var="vo" items="${vos}" varStatus="st">
     	<tr>
-    	  <td>${cnt - st.index}</td>
+    	  <td>${cnt-st.index}</td>
     	  <td>${vo.name}</td>
     	  <td>${vo.age}</td>
     	  <td>${vo.gender}</td>

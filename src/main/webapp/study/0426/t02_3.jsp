@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>t02_3.jsp</title>
+  <title>t02_2.jsp</title>
   <%@ include file = "/include/bs4.jsp" %>
 </head>
 <body>
@@ -12,7 +12,7 @@
 <%@ include file = "/include/nav.jsp" %>
 <p><br/></p>
 <div class="container">
-  <h2>성적 자료(jsp방식으로의 입력처리2)</h2>
+  <h2>성적 자료(JSP방식으로의 입력처리22)</h2>
   <form name="myform" method="post" action="<%=request.getContextPath()%>/study/0426/t02_3Ok.jsp">
   	<p>성명 : <input type="text" name="name" value="홍길동" class="form-control" autofocus /></p>
   	<p>학번 : <input type="text" name="hakbun" value="MS1234" class="form-control"/></p>

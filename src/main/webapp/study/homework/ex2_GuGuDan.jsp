@@ -17,11 +17,11 @@
   <h3>구구단 연습</h3>
   <form>
     <div class="input-group mb-2">
-	    <div class="input-group-prepend"><span class="input-group-text" style="width:60px">시작단</span></div>
+	    <div class="input-group-prepend"><span class="input-group-text" style="width:70px">시작단</span></div>
 	    <input type="number" name="startDan" value="${param.startDan}" autofocus class="form-control" />
 	  </div>
 	  <div class="input-group mb-2">
-	    <div class="input-group-prepend"><span class="input-group-text" style="width:60px">끝 단</span></div>
+	    <div class="input-group-prepend"><span class="input-group-text" style="width:70px">끝 단</span></div>
 	    <input type="number" name="endDan" value="${param.endDan}" class="form-control" />
 	  </div>
 	  <div class="input-group mb-2">

@@ -51,3 +51,4 @@
 <p><br/></p>
 <jsp:include page="/include/footer.jsp" />
 </body>
+</html>

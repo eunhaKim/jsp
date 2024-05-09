@@ -4,11 +4,11 @@
 	int aCount = application.getAttribute("aCount")==null ? 0 : (int) application.getAttribute("aCount");
 	int sCount = session.getAttribute("sCount")==null ? 0 : (int) session.getAttribute("sCount");
 	
-	aCount ++;
-	sCount ++;
+	aCount++;
+	sCount++;
 	
-	application.setAttribute("aCount",aCount);
-	session.setAttribute("sCount",sCount);
+	application.setAttribute("aCount", aCount);
+	session.setAttribute("sCount", sCount);
 %>
 <!DOCTYPE html>
 <html>
@@ -27,12 +27,13 @@
   <hr/>
   <p>어플리케이션 카운트 : ${aCount}</p>
   <hr/>
-  <p>세션 카운트 : ${sCount }</p>
+  <p>세션 카운트 : ${sCount}</p>
   <hr/>
   <p>
     <a href="t4_ApplicationClear.jsp" class="btn btn-success">어플리케이션 카운트 초기화</a>
     <a href="t4_SessionClear.jsp" class="btn btn-primary">세션 카운트 초기화</a>
-    <a href="javascript:location.reload()" class="btn btn-secondary">방문수 증가</a>
+    <!-- <a href="javascript:location.reload()" class="btn btn-secondary">방문수 증가</a> -->
+    <a href="t4_StorageTest.jsp" class="btn btn-secondary">방문수 증가</a>
   </p>
 </div>
 <p><br/></p>

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import study2.StudyDAO;
 import study2.StudyInterface;
 
+@SuppressWarnings("serial")
 @WebServlet("/AjaxIdCheck1")
 public class AjaxIdCheck1 extends HttpServlet {
 
@@ -27,10 +28,11 @@ public class AjaxIdCheck1 extends HttpServlet {
 			name = "찾는 자료가 없습니다.";
 		}
 		else {
-//			PrintWriter out = response.getWriter();
-//			out.println(name);
-//			out.write(name);
-			response.getWriter().write(name); // 헤더에 값을 실어 보낸다.
+			// PrintWriter out = response.getWriter();
+			// out.println(name);
+			// out.write(name);
+			
+			response.getWriter().write(name);
 		}
 	}
 }

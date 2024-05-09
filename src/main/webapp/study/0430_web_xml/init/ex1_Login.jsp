@@ -32,12 +32,12 @@
         <td colspan="2"><font size="5">로 그 인</font></td>
       </tr>
       <tr>
-        <th>아이디</th>
-        <td><input type="text" name="mid" value="${mid}" autofocus required class="form-control"/></td>
-      </tr>
-      <tr>
         <th>부서명</th>
         <td><input type="text" name="className" value="${className}" autofocus required class="form-control"/></td>
+      </tr>
+      <tr>
+        <th>아이디</th>
+        <td><input type="text" name="mid" value="${mid}" autofocus required class="form-control"/></td>
       </tr>
       <tr>
         <th>비밀번호</th>

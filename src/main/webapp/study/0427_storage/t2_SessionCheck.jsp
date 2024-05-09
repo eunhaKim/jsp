@@ -2,17 +2,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	String sessionName = "";
-	String sessionName2 = "";
+	String sessionName_ = "";
   String sessionValue = "";
   
   Enumeration enumCK = session.getAttributeNames();
   
   while(enumCK.hasMoreElements()) {
-  	sessionName = enumCK.nextElement().toString();
-  	sessionName2 += sessionName + "/";
-  	sessionValue += session.getAttribute(sessionName) + "/";
+  	sessionName_ = enumCK.nextElement().toString();
+  	sessionName += sessionName_ + "/";
+  	sessionValue += session.getAttribute(sessionName_) + "/";
   }
-  System.out.println(sessionName2 + "\n" + sessionValue);
+  System.out.println(sessionName + "\n" + sessionValue);
 
 
   String mid = (String) session.getAttribute("sMid");

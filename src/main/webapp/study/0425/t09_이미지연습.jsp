@@ -2,20 +2,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>t09.jsp</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t09.jsp</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-  	'use strict';
-  	function imgView(){
-  		let img = myform.img.value;
-  		let str = '<img src="<%=request.getContextPath()%>/images/'+img+'.jpg" width="300px"/>';
-  		demo.innerHTML = str; 
-  	}
+    'use strict';
+    
+    function imgView() {
+    	let img = myform.img.value;
+    	let str = '<img src="<%=request.getContextPath()%>/images/'+img+'.jpg" width="300px" />';
+    	demo.innerHTML = str;
+    }
   </script>
 </head>
 <body>
@@ -25,13 +26,13 @@
   <hr/>
   <form name="myform">
 	  <div>그림선택
-	  	<select name="img" onchange="imgView()">
-	  		<option>111</option>
-	  		<option>112</option>
-	  		<option>113</option>
-	  		<option>114</option>
-	  		<option>115</option>
-	  	</select>
+	    <select name="img" onchange="imgView()">
+	      <option>111</option>
+	      <option>112</option>
+	      <option>113</option>
+	      <option>114</option>
+	      <option>115</option>
+	    </select>
 	  </div>
 	  <hr/>
 	  <div id="demo"></div>

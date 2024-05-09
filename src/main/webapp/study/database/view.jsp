@@ -72,10 +72,10 @@
           <div class="row">
             <div class="col text-left">
 		          <input type="submit" value="수정" class="btn btn-success mr-2"/>
-		          <c:if test="${sMid==vo.mid}"><!-- 로그인아이디와 현재 아이디가 같을때 -->
+		          <c:if test="${sMid == vo.mid}">
 		          	<input type="button" value="탈퇴" onclick="deleteCheck()" class="btn btn-danger mr-2"/>
 		          </c:if>
-		          <c:if test="${sMid!=vo.mid}"><!-- 로그인아이디와 현재 아이디가 다를때는 삭제 -->
+		          <c:if test="${sMid != vo.mid}">
 		          	<input type="button" value="삭제" onclick="deleteCheck()" class="btn btn-danger mr-2"/>
 		          </c:if>
 	          </div>

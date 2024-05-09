@@ -31,7 +31,7 @@ public class HoewonInputCommand implements StudyInterface {
 		
 		LoginDAO dao = new LoginDAO();
 		
-		// 아이디 중복 체크
+		// 아이디 중복체크
 		LoginVO vo2 = dao.getLoginIdSearch(mid);
 		if(vo2.getName() != null) {
 			response.getWriter().write("아이디가 중복되었습니다. 다시 가입하세요.");
@@ -39,9 +39,8 @@ public class HoewonInputCommand implements StudyInterface {
 		else {
 			int res = dao.setLoginInput(vo);
 			if(res != 0) response.getWriter().write("1");
-			else response.getWriter().write("회원가입실패~~, 다시 가입해주세요.");
+			else response.getWriter().write("회원 가입실패~~, 다시 가입해 주세요.");
 		}
-		
 		
 	}
 

@@ -10,7 +10,7 @@ public class Test4UpdateCommand implements Test4Interface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("이곳은 Test4UpdateCommand입니다.");
+		System.out.println("이곳은 Test4UpdateCommand 입니다.");
 	}
 
 }

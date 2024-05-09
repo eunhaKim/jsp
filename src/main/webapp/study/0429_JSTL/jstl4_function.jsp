@@ -130,12 +130,20 @@
 		<br/>
 		
 		4-5. str변수의 'o'문자의 마지막 위치값을 출력하시오?<br/>
-    split()함수 사용하기 : <br/>
+    - split()함수 사용하기 : <br/>
     <c:set var="strTemps" value="${fn:split(str,'o')}"/>
     <c:set var="strTempsLength" value="${fn:length(strTemps)}"/>
     마지막 'o'문자뒤의 모든 문자열? ${strTemps[strTempsLength-1]}<br/>
     마지막 'o'문자의 위치? <font color='red'><b>${(fn:length(str)-1) - (fn:length(strTemps[strTempsLength-1]))}</b></font>
-		
+    <br/>
+		- forEach활용한 전체문자의 1대1 비교<br/>
+		<c:set var="idx" value="0"/>
+		<c:forEach var="i" begin="0" end="${fn:length(str)-1}">
+		  <c:if test="${fn:substring(str,i,i+1)=='o'}">
+		    <c:set var="idx" value="${i}"/>
+		  </c:if>
+		</c:forEach>
+	  마지막 'o'문자의 위치? <font color="red"><b>${idx}</b></font><br/>
 		<br/>
 		<hr/>
 		

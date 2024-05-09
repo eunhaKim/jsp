@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import study2.StudyDAO;
 import study2.StudyInterface;
 
+@SuppressWarnings("serial")
 @WebServlet("/AjaxIdCheck2_1")
 public class AjaxIdCheck2_1 extends HttpServlet {
 
@@ -24,6 +25,7 @@ public class AjaxIdCheck2_1 extends HttpServlet {
 		String name = dao.getIdSearch(mid);
 		
 		if(name.equals("")) name = "찾는 자료가 없습니다.";
-		else response.getWriter().write(name); // 헤더에 값을 실어 보낸다.
+		else response.getWriter().write(name);
+		
 	}
 }

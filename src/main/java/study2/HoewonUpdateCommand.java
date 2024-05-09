@@ -29,9 +29,11 @@ public class HoewonUpdateCommand implements StudyInterface {
 		vo.setGender(gender);
 		vo.setAddress(address);
 		
+		
 		LoginDAO dao = new LoginDAO();
 		
 		LoginVO vo2 = dao.getLoginIdSearch(mid);
+		
 		vo.setIdx(vo2.getIdx());
 		
 		int res = dao.setLoginUpdate(vo);

@@ -12,7 +12,7 @@
 <%@ include file = "/include/nav.jsp" %>
 <p><br/></p>
 <div class="container">
-  <h2>성적 자료(jsp방식으로의 입력처리)</h2>
+  <h2>성적 자료(JSP방식으로의 입력처리)</h2>
   <form name="myform" method="post" action="<%=request.getContextPath()%>/study/0426/t02_2Ok.jsp">
   	<p>성명 : <input type="text" name="name" value="홍길동" class="form-control" autofocus /></p>
   	<p>학번 : <input type="text" name="hakbun" value="MS1234" class="form-control"/></p>

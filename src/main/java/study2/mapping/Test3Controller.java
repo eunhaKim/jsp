@@ -28,8 +28,6 @@ public class Test3Controller extends HttpServlet {
 		int su1 = request.getParameter("su1")==null ? 0 : Integer.parseInt(request.getParameter("su1"));
 		int su2 = request.getParameter("su2")==null ? 0 : Integer.parseInt(request.getParameter("su2"));
 		
-		Test1Service service = new Test1Service();
-		
 		if(com.equals("list")) {
 			System.out.println("list 입니다.");
 		}
@@ -47,11 +45,18 @@ public class Test3Controller extends HttpServlet {
 		}
 		else if(com.equals("hap")) {
 			System.out.println("hap 입니다.");
-			request.setAttribute("hap", service.hap(su1, su2));
+			// System.out.println("hap : " + (su1 + su2));
+			
+			Test1Service service = new Test1Service();
+			int hap = service.hap(su1, su2);
+			request.setAttribute("hap", hap);
 		}
 		else if(com.equals("cha")) {
 			System.out.println("cha 입니다.");
-			request.setAttribute("cha", service.cha(su1, su2));
+			
+			Test1Service service = new Test1Service();
+			int cha = service.cha(su1, su2);
+			request.setAttribute("cha", cha);
 		}
 		else if(com.equals("gop")) {
 			System.out.println("gop 입니다.");
@@ -59,7 +64,7 @@ public class Test3Controller extends HttpServlet {
 		}
 		else if(com.equals("mok")) {
 			System.out.println("mok 입니다.");
-			String mok = su2==0? "계산불가" : (su1/su2) + "";
+			String mok = su2==0? "계산불가" : (su1 / su2) + "";
 			request.setAttribute("mok", mok);
 		}
 		

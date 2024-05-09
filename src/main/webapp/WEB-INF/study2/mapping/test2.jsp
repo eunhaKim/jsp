@@ -10,8 +10,8 @@
   <%@ include file = "/include/bs4.jsp" %>
   <script>
     'use strict';
-    
-    /* function fCheck(flag) {
+    /* 
+    function fCheck(flag) {
     	if(flag == 1) {
     		myform.submit();
     	}
@@ -22,7 +22,8 @@
     		myform.action = "${ctp}/mapping/test1Res2";
     		myform.submit();
     	}
-    } */
+    }
+     */
   </script>
 </head>
 <body>
@@ -35,21 +36,19 @@
   <div>전송 메세지 : ${msg}</div>
   <hr/>
   <div>
-		  
-  	<a href="list.do" class="btn btn-success mr-1">연습List</a>
-  	<a href="input.do" class="btn btn-warning mr-1">연습Input</a>
-  	<a href="update.do" class="btn btn-info mr-1">연습Update</a>
-  	<a href="delete.do" class="btn btn-primary mr-1">연습Delete</a>
-  	<a href="search.do" class="btn btn-primary">연습Search</a>
-  	
+  	<a href="list.do" class="btn btn-success mr-3">연습List</a>
+  	<a href="input.do" class="btn btn-warning mr-3">연습Input</a>
+  	<a href="update.do" class="btn btn-info mr-3">연습Update</a>
+  	<a href="delete.do" class="btn btn-primary mr-3">연습Delete</a>
+  	<a href="search.do" class="btn btn-primary mr-3">연습Search</a>
   </div>
   <hr/>
   <div>
     <form name="myform" method="post" action="${ctp}/mapping/test2.do">
-    	<div>
+      <div>
 	    	<input type="number" name="su1" value="${su1}" class="form-control mb-2"/>
 	    	<input type="number" name="su2" value="${su2}" class="form-control mb-2"/>
-	    </div>
+    	</div>
 		  <div><input type="submit" value="전송하기" class="btn btn-success"/></div>
     </form>
   </div>

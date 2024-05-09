@@ -14,7 +14,8 @@
   </style>
 </head>
 <body>
-<!-- 헤더 -->
+
+
 <%@ include file = "../../include/header.jsp" %>
 
 <!-- 메뉴바(Nav) -->
@@ -60,9 +61,6 @@
     </div>
   </div>
 </div>
-
-<!-- 푸터 -->
 <%@ include file = "../../include/footer.jsp" %>
-
 </body>
 </html>

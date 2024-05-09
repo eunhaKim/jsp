@@ -26,7 +26,7 @@
 <jsp:include page="/include/nav.jsp" />
 <p><br/></p>
 <div class="container">
-  <form name="myform" method="post" action="${pageContext.request.contextPath }/j0427/LoginOk">
+  <form name="myform" method="post" action="${pageContext.request.contextPath}/j0427/LoginOk">
     <table class="table table-bordered text-center">
       <tr>
         <td colspan="2"><font size="5">로 그 인</font></td>

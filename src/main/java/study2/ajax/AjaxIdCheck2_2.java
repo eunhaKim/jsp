@@ -28,9 +28,8 @@ public class AjaxIdCheck2_2 extends HttpServlet {
 		
 		String str = "";
 		
-		
 		if(vo.getName() == null) str = "찾는 자료가 없습니다.";
-		else str = vo.getMid() + "/" + vo.getName() + "/" + vo.getAge() + "/" + vo.getGender() + "/" + vo.getAddress();
+		else str = vo.getMid()+"/"+vo.getName()+"/"+vo.getAge()+"/"+vo.getGender()+"/"+vo.getAddress();
 		
 		response.getWriter().write(str);
 		

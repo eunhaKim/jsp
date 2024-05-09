@@ -13,7 +13,7 @@
 <jsp:include page="/include/nav.jsp" />
 <p><br/></p>
 <div class="container">
-  <h2>EL(Expression Language)</h2>
+  <h2>EL(Expression Language) : ${sAtom}</h2>
   <p>저장소(서버 저장소:ServletContext컨테이너)에 기록되어 있는 자료에 대한 처리를 담당</p>
   <hr/>
   <pre>
@@ -24,14 +24,14 @@
   <hr/>
 <%
   String atom = "Seoul";
-	String name = "홍길동";
+	String name2 = "홍길동";
 	int su1 = 100, su2 = 200;
 	String su3 = "100", su4 = "400";
 %>
 	<h4>스크립틀릿을 이용한 출력</h4>
 	<div>
 		atom = <%=atom %><br/>
-		name = <%=name %><br/>
+		name2 = <%=name2 %><br/>
 		su1 = <%=su1 %><br/>
 		su2 = <%=su2 %><br/>
 		su3 + su4 = <%=(su3 + su4) %><br/>
@@ -42,14 +42,14 @@
 	  <h4>EL을 이용한 출력</h4>
 <%
 		request.setAttribute("atom", atom);
-		pageContext.setAttribute("name", name);
+		pageContext.setAttribute("name2", name2);
 		pageContext.setAttribute("su1", su1);
 		pageContext.setAttribute("su2", su2);
 		pageContext.setAttribute("su3", su3);
 		pageContext.setAttribute("su4", su4);
 %>
 		atom = ${atom}<br/>
-		name = ${name}<br/>
+		name2 = ${name2}<br/>
 		su1 = ${su1}<br/>
 		su2 = ${su2}<br/>
 		su3 + su4 = ${(su3 + su4)}<br/>
@@ -85,9 +85,10 @@
 	</div>
 	<hr/>
 <%
-  name = request.getParameter("name")==null ? "" : request.getParameter("name");
+  String name = request.getParameter("name")==null ? "" : request.getParameter("name");
   if(!name.equals("")) {
 %>
+		<%-- <p>성명 : ${param.name}</p> --%>
 		<p>성명 : ${name}</p>
 		<p>취미 : ${hobby}</p>
 <%} %>

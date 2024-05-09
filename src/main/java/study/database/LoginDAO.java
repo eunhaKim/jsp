@@ -296,7 +296,7 @@ public class LoginDAO {
 		return vo;
 	}
 
-	// 조건없이 전체 자료 조회..
+	// 조건없이 전체 자료 조회....
 	public ArrayList<LoginVO> getLoginAllList() {
 		ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
 		try {

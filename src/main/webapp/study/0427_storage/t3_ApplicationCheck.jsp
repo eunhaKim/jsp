@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	String applicationName = "";
-	String applicationName2 = "";
+	String applicationName_ = "";
   String applicationValue = "";
   
   String mid = (String) application.getAttribute("aMid");
@@ -18,7 +18,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>t3_ApplicationCheck.jsp</title>
+  <title>t3_applicationCheck.jsp</title>
   <%@ include file = "/include/bs4.jsp" %>
 </head>
 <body>
@@ -26,7 +26,7 @@
 <jsp:include page="/include/nav.jsp" />
 <p><br/></p>
 <div class="container">
-  <h2>어플리케이션값 출력</h2>
+  <h2>세션값 출력</h2>
   <p>아이디 : ${mid}</p>
   <p>별명 : ${nickName}</p>
   <p>성명 : ${name}</p>

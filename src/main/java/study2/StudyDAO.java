@@ -1,6 +1,5 @@
 package study2;
 
-import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -22,11 +21,11 @@ public class StudyDAO {
 		
 		try {
 			Class.forName(driver);
-			conn = DriverManager.getConnection(url,user,password);
+			conn = DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException e) {
-			System.out.println("드라이버가 없습니다."+e.getMessage());
+			System.out.println("드라이버가 없습니다." + e.getMessage());
 		} catch (SQLException e) {
-			System.out.println("디비연동실패~~"+e.getMessage());
+			System.out.println("DB연동 실패~" + e.getMessage());
 		}
 	}
 	
@@ -66,4 +65,5 @@ public class StudyDAO {
 		}
 		return name;
 	}
+	
 }

@@ -19,11 +19,9 @@ public class HoewonSearchCommand implements StudyInterface {
 		
 		LoginVO vo = dao.getLoginIdxSearch(idx);
 		
-		String str = idx + "/" + vo.getMid() + "/" + vo.getPwd() + "/" + vo.getName() + "/" + 
-												vo.getAge() + "/" + vo.getGender() + "/" + vo.getAddress();
+		String str = idx + "/" + vo.getMid() + "/" + vo.getPwd() + "/" + vo.getName() + "/" + vo.getAge() + "/" + vo.getGender() + "/" + vo.getAddress();
 		
 		response.getWriter().write(str);
-		
 	}
 
 }
