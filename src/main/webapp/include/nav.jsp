@@ -21,14 +21,14 @@
 	      <li class="nav-item">
 	        <a class="nav-link" href="#">Board</a>
 	      </li>
+	    </c:if>
+	    <c:if test="${level <= 4 && (level > 1 || level == 0)}">
 	      <li class="nav-item">
 	        <a class="nav-link" href="#">PDS</a>
 	      </li>    
 	      <li class="nav-item mr-2">
 				  <div class="dropdown">
-				    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-				      Study1
-				    </button>
+				    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Study1</button>
 				    <div class="dropdown-menu">
 				      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0426/t01.jsp">서버환경</a>
 				      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0426/t02.jsp">성적계산</a>
@@ -50,9 +50,7 @@
 	      </li>
 	      <li class="nav-item mr-2">
 				  <div class="dropdown">
-				    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-				      Study2
-				    </button>
+				    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Study2</button>
 				    <div class="dropdown-menu">
 				      <a class="dropdown-item" href="${ctp}/study/password/passCheck.jsp">비밀번호암호화</a>
 				      <a class="dropdown-item" href="${ctp}/mapping/test1">디렉토리매핑연습</a>
@@ -68,6 +66,24 @@
 				  </div>
 	      </li>
    		</c:if>
+   		<c:if test="${level <= 4}">
+	      <li class="nav-item mr-2">
+				  <div class="dropdown">
+				    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">MyPage</button>
+				    <div class="dropdown-menu">
+				      <a class="dropdown-item" href="MemberMain.mem">회원메인방</a>
+				      <c:if test="${level <= 4 && (level > 1 || level == 0)}">
+					      <a class="dropdown-item" href="MemberList.mem">회원리스트</a>
+					      <a class="dropdown-item" href="#">일정관리</a>
+					      <a class="dropdown-item" href="#">메세지관리</a>
+					    </c:if>
+				      <a class="dropdown-item" href="MemberPwdCheck.mem">회원정보수정</a>
+				      <a class="dropdown-item" href="MemberDelete.mem">회원탈퇴</a>
+				      <c:if test="${level == 0}"><a class="dropdown-item" href="#">관리자메뉴</a></c:if>
+				    </div>
+				  </div>
+	      </li>
+	    </c:if>
       <li class="nav-item">
 				<c:if test="${level <= 4}"><a class="nav-link" href="${ctp}/MemberLogout.mem">Logout</a></c:if>
         <c:if test="${level > 4}"><a class="nav-link" href="${ctp}/MemberLogin.mem">Login</a></c:if>
