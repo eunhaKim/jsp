@@ -87,7 +87,7 @@
   </form>
   <div id="pwdDemo">
     <form name="pwdForm" method="post" action="MemberPwdChangeCheck.mem">
-      <table class="table table-bordered text-center">
+      <table>
         <tr>
           <td>변경할 비밀번호를 입력하세요</td>
           <td><input type="password" name="pwdCheck" id="pwdCheck" class="form-control"/></td>
