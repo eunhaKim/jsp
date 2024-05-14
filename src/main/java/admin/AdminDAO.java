@@ -36,17 +36,21 @@ public class AdminDAO {
 	}
 
 	// 회원 전체/부분 리스트
-	public ArrayList<MemberVO> getMemberList(int level) {
+	public ArrayList<MemberVO> getMemberList(int startIndexNo, int pageSize, int level) {
 		ArrayList<MemberVO> vos = new ArrayList<MemberVO>();
 		try {
 			if(level == 999) {
-				sql = "select *, timestampdiff(day, lastDate, now()) as deleteDiff from member";
+				sql = "select *, timestampdiff(day, lastDate, now()) as deleteDiff from member order by idx desc limit ?,?";
 				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, startIndexNo);
+				pstmt.setInt(2, pageSize);
 			}
 			else {
-				sql = "select *, timestampdiff(day, lastDate, now()) as deleteDiff  from member where level = ? order by idx desc";
+				sql = "select *, timestampdiff(day, lastDate, now()) as deleteDiff  from member where level = ? order by idx desc limit ?,?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, level);
+				pstmt.setInt(2, startIndexNo);
+				pstmt.setInt(3, pageSize);
 			}
 			rs = pstmt.executeQuery();
 			
@@ -93,7 +97,12 @@ public class AdminDAO {
 	public int setMemberLevelChange(int idx, int level) {
 		int res = 0;
 		try {
-			sql = "update member set level = ? where idx = ?";
+			if(level == 99) {
+				sql = "update member set level = ?, lastDate=now(), userDel='OK' where idx = ?";
+			}
+			else {
+				sql = "update member set level = ?, userDel='NO' where idx = ?";				
+			}
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, level);
 			pstmt.setInt(2, idx);
@@ -122,5 +131,46 @@ public class AdminDAO {
 		return res;
 	}
 
+	// 신규회원 건수
+	public int getNewMemberListCount() {
+		int mCount = 0;
+		try {
+			sql = "select count(idx) as cnt from member where level = 1";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			rs.next();
+			mCount = rs.getInt("cnt");
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			rsClose();			
+		}
+		return mCount;
+	}
+
+	// 각 레벨별 건수 구하기
+	public int getTotRecCnt(int level) {
+		int totRecCnt = 0;
+		try {
+			if(level == 999) {
+				sql = "select count(*) as cnt from member";
+				pstmt = conn.prepareStatement(sql);
+			}
+			else {
+				sql = "select count(*) as cnt  from member where level = ? order by idx desc";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, level);
+			}
+			rs = pstmt.executeQuery();
+			rs.next();
+			totRecCnt = rs.getInt("cnt");
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			rsClose();			
+		}
+		return totRecCnt;
+	}
 	
 }
