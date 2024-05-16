@@ -24,8 +24,8 @@ public class MemberVO {
 	private String startDate;
 	private String lastDate;
 	private int todayCnt;
-	private int deleteDiff;
 	
+	private int deleteDiff;
 	
 	public int getIdx() {
 		return idx;
@@ -171,7 +171,6 @@ public class MemberVO {
 	public void setDeleteDiff(int deleteDiff) {
 		this.deleteDiff = deleteDiff;
 	}
-	
 	
 	@Override
 	public String toString() {

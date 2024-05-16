@@ -1,4 +1,4 @@
-package member;
+package study2.hoewon;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,15 +7,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import admin.AdminDAO;
+import study.database.LoginDAO;
+import study.database.LoginVO;
+import study2.StudyInterface;
 
-public class MemberListCommand implements MemberInterface {
+public class HoewonMainCommand implements StudyInterface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MemberDAO dao = new MemberDAO();
+		LoginDAO dao = new LoginDAO();
 		
-		ArrayList<MemberVO> vos = dao.getMemberList();
+		ArrayList<LoginVO> vos = dao.getLoginAllList();
 		
 		request.setAttribute("vos", vos);
 	}

@@ -1,4 +1,4 @@
-package member;
+package admin.complaint;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,16 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import admin.AdminDAO;
+import admin.AdminInterface;
 
-public class MemberListCommand implements MemberInterface {
+public class ComplaintListCommand implements AdminInterface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MemberDAO dao = new MemberDAO();
+		AdminDAO dao = new AdminDAO();
 		
-		ArrayList<MemberVO> vos = dao.getMemberList();
+		ArrayList<ComplaintVO> vos = dao.ComplaintList();
 		
 		request.setAttribute("vos", vos);
+		request.setAttribute("complaintCnt", vos.size());
 	}
 
 }
