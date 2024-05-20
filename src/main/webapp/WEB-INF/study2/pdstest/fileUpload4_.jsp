@@ -12,11 +12,8 @@
     'use strict';
     
     function fCheck() {
-    	//let fName = document.getElementById("file").value;
-    	//let ext = fName.substring(fName.lastIndexOf(".")+1).toLowerCase();
     	let fName = document.getElementById("file").value;
-    	let ext = "";
-    	let fileSize = 0;
+    	let ext = fName.substring(fName.lastIndexOf(".")+1).toLowerCase();
     	let maxSize = 1024 * 1024 * 10;	// 기본 단위 : Byte,   1024 * 1024 * 10 = 10MByte 허용
     	
     	if(fName.trim() == "") {
@@ -25,19 +22,12 @@
     	}
     	//demo.innerHTML = fName;
     	
-    	let fileLength = document.getElementById("file").files.length;	// 선택한 파일의 갯수
-    	
-    	for(let i=0; i<fileLength; i++) {
-    		fName = document.getElementById("file").files[i].name;		// 선택된 1개의 파일이름가져오기
-    		ext = fName.substring(fName.lastIndexOf(".")+1).toLowerCase();
-	    	fileSize = document.getElementById("file").files[i].size;
-	    	if(ext != 'jpg' && ext != 'gif' && ext != 'png' && ext != 'zip' && ext != 'hwp' && ext != 'ppt' && ext != 'pptx' && ext != 'doc' && ext != 'pdf' && ext != 'xlsx' && ext != 'txt') {
-	    		alert("업로드 가능한 파일은 'jpg/gif/png/zip/hwp/ppt/pptx/doc/pdf/xlsx/txt'만 가능합니다.");
-	    	}
-    	}
-    	
+    	let fileSize = document.getElementById("file").files[0].size;
     	if(fileSize > maxSize) {
-    		alert("업로드 파일의 최대용량은 10MByte입니다.");
+    		alert("업로드할 1개 파일의 최대용량은 10MByte입니다.");
+    	}
+    	else if(ext != 'jpg' && ext != 'gif' && ext != 'png' && ext != 'zip' && ext != 'hwp' && ext != 'ppt' && ext != 'pptx' && ext != 'doc' && ext != 'pdf' && ext != 'xlsx' && ext != 'txt') {
+    		alert("업로드 가능한 파일은 'jpg/gif/png/zip/hwp/ppt/pptx/doc/pdf/xlsx/txt'만 가능합니다.");
     	}
     	else {
     		//alert("파일 전송!!!");
