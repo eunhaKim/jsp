@@ -18,12 +18,14 @@ import study2.hoewon.HoewonMainCommand;
 import study2.hoewon.HoewonSearchCommand;
 import study2.hoewon.HoewonUpdateCommand;
 import study2.modal.ModelTestCommand;
+import study2.pdstest.FileDeleteCheckCommand;
 import study2.pdstest.FileDeleteCommand;
 import study2.pdstest.FileDownLoadCommand;
 import study2.pdstest.FileUpload1OkCommand;
 import study2.pdstest.FileUpload2OkCommand;
 import study2.pdstest.FileUpload3OkCommand;
 import study2.pdstest.FileUpload4OkCommand;
+import study2.pdstest.JavaFileDownloadCommand;
 
 @SuppressWarnings("serial")
 @WebServlet("*.st")
@@ -99,6 +101,9 @@ public class StudyController extends HttpServlet {
 			command.execute(request, response);
 			viewPage += "/modal/modal2.jsp";
 		}
+		else if(com.equals("FileUpload")) {
+			viewPage += "/pdstest/fileUpload.jsp";
+		}
 		else if(com.equals("FileUpload1")) {
 			viewPage += "/pdstest/fileUpload1.jsp";
 		}
@@ -131,13 +136,29 @@ public class StudyController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "/include/message.jsp";
 		}
+		else if(com.equals("FileUpload5")) {
+			viewPage += "/pdstest/fileUpload5.jsp";
+		}
+		else if(com.equals("FileUpload6")) {
+			viewPage += "/pdstest/fileUpload6.jsp";
+		}
 		else if(com.equals("FileDownLoad")) {
 			command = new FileDownLoadCommand();
 			command.execute(request, response);
 			viewPage += "/pdstest/fileDownLoad.jsp";
 		}
+		else if(com.equals("JavaFileDownload")) {
+			command = new JavaFileDownloadCommand();
+			command.execute(request, response);
+			return;
+		}
 		else if(com.equals("FileDelete")) {
 			command = new FileDeleteCommand();
+			command.execute(request, response);
+			return;
+		}
+		else if(com.equals("FileDeleteCheck")) {
+			command = new FileDeleteCheckCommand();
 			command.execute(request, response);
 			return;
 		}
