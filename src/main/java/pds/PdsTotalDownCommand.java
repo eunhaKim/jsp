@@ -46,7 +46,7 @@ public class PdsTotalDownCommand implements PdsInterface {
 		for(int i=0; i<fSNames.length; i++) {
 			File file = new File(realPath + fSNames[i]);
 			fis = new FileInputStream(file);
-			zos.putNextEntry(new ZipEntry(fSNames[i]));
+			zos.putNextEntry(new ZipEntry(fNames[i]));	// 자신파일 원래의 이름으로 입축처리한다.
 			
 			while((size = fis.read(buffer)) != -1) {
 				zos.write(buffer, 0, size);

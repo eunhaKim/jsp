@@ -1,4 +1,4 @@
-package pds;
+package webMessage;
 
 import java.io.IOException;
 
@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
-@WebServlet("*.pds")
-public class PdsController extends HttpServlet {
+@WebServlet("*.wm")
+public class WebMessageController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PdsInterface command = null;
-		String viewPage = "/WEB-INF/pds";
+		WebMessageInterface command = null;
+		String viewPage = "/WEB-INF/webMessage";
 		
 		String com = request.getRequestURI();
 		com = com.substring(com.lastIndexOf("/"), com.lastIndexOf("."));
@@ -30,45 +30,30 @@ public class PdsController extends HttpServlet {
 			request.setAttribute("url", request.getContextPath()+"/MemberLogin.mem");
 			viewPage = "/include/message.jsp";
 		}
-		else if(level == 1) {
-			request.setAttribute("message", "정회원 이상만 사용할수 있습니다.");
-			request.setAttribute("url", request.getContextPath()+"/MemberMain.mem");
-			viewPage = "/include/message.jsp";
-		}
-		else if(com.equals("/PdsList")) {
-			command = new PdsListCommand();
+		else if(com.equals("/WebMessage")) {
+			command = new WebMessageCommand();
 			command.execute(request, response);
-			viewPage += "/pdsList.jsp";
+			viewPage += "/webMessage.jsp";
 		}
-		else if(com.equals("/PdsInput")) {
-			command = new PdsInputCommand();
-			command.execute(request, response);
-			viewPage += "/pdsInput.jsp";
-		}
-		else if(com.equals("/PdsInputOk")) {
-			command = new PdsInputOkCommand();
+		else if(com.equals("/WmInputOk")) {
+			command = new WmInputOkCommand();
 			command.execute(request, response);
 			viewPage = "/include/message.jsp";
 		}
-		else if(com.equals("/PdsContent")) {
-			command = new PdsContentCommand();
+		else if(com.equals("/WmDeleteCheck")) {
+			command = new WmDeleteCheckCommand();
 			command.execute(request, response);
-			viewPage += "/pdsContent.jsp";
+			viewPage = "/include/message.jsp";
 		}
-		else if(com.equals("/PdsDownNumCheck")) {
-			command = new PdsDownNumCheckCommand();
+		else if(com.equals("/WmDeleteOne")) {
+			command = new WmDeleteOneCommand();
 			command.execute(request, response);
 			return;
 		}
-		else if(com.equals("/PdsDeleteCheck")) {
-			command = new PdsDeleteCheckCommand();
+		else if(com.equals("/WmDeleteAll")) {
+			command = new WmDeleteAllCommand();
 			command.execute(request, response);
 			return;
-		}
-		else if(com.equals("/PdsTotalDown")) {
-			command = new PdsTotalDownCommand();
-			command.execute(request, response);
-			viewPage = "/include/message.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);

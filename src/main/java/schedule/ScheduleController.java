@@ -1,4 +1,4 @@
-package pds;
+package schedule;
 
 import java.io.IOException;
 
@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
-@WebServlet("*.pds")
-public class PdsController extends HttpServlet {
+@WebServlet("*.sc")
+public class ScheduleController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PdsInterface command = null;
-		String viewPage = "/WEB-INF/pds";
+		ScheduleInterface command = null;
+		String viewPage = "/WEB-INF/schedule";
 		
 		String com = request.getRequestURI();
 		com = com.substring(com.lastIndexOf("/"), com.lastIndexOf("."));
@@ -30,45 +30,30 @@ public class PdsController extends HttpServlet {
 			request.setAttribute("url", request.getContextPath()+"/MemberLogin.mem");
 			viewPage = "/include/message.jsp";
 		}
-		else if(level == 1) {
-			request.setAttribute("message", "정회원 이상만 사용할수 있습니다.");
-			request.setAttribute("url", request.getContextPath()+"/MemberMain.mem");
-			viewPage = "/include/message.jsp";
-		}
-		else if(com.equals("/PdsList")) {
-			command = new PdsListCommand();
+		else if(com.equals("/Schedule")) {
+			command = new ScheduleCommand();
 			command.execute(request, response);
-			viewPage += "/pdsList.jsp";
+			viewPage += "/schedule.jsp";
 		}
-		else if(com.equals("/PdsInput")) {
-			command = new PdsInputCommand();
+		else if(com.equals("/ScheduleMenu")) {
+			command = new ScheduleMenuCommand();
 			command.execute(request, response);
-			viewPage += "/pdsInput.jsp";
+			viewPage += "/scheduleMenu.jsp";
 		}
-		else if(com.equals("/PdsInputOk")) {
-			command = new PdsInputOkCommand();
-			command.execute(request, response);
-			viewPage = "/include/message.jsp";
-		}
-		else if(com.equals("/PdsContent")) {
-			command = new PdsContentCommand();
-			command.execute(request, response);
-			viewPage += "/pdsContent.jsp";
-		}
-		else if(com.equals("/PdsDownNumCheck")) {
-			command = new PdsDownNumCheckCommand();
+		else if(com.equals("/ScheduleInputOk")) {
+			command = new ScheduleInputOkCommand();
 			command.execute(request, response);
 			return;
 		}
-		else if(com.equals("/PdsDeleteCheck")) {
-			command = new PdsDeleteCheckCommand();
+		else if(com.equals("/ScheduleDeleteOk")) {
+			command = new ScheduleDeleteOkCommand();
 			command.execute(request, response);
 			return;
 		}
-		else if(com.equals("/PdsTotalDown")) {
-			command = new PdsTotalDownCommand();
+		else if(com.equals("/ScheduleUpdateOk")) {
+			command = new ScheduleUpdateOkCommand();
 			command.execute(request, response);
-			viewPage = "/include/message.jsp";
+			return;
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
