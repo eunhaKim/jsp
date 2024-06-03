@@ -18,19 +18,19 @@
   <title>memberMessage.jsp</title>
   <%@ include file = "/include/bs4.jsp" %>
   <script>
-  'use strict';
-  
-  setTimeout("location.reload()",1000*5);
-  
-  $(document).ready(function(){
-	  document.body.scrollIntoView(false); // 스크롤바를 강제로 Body태그의 마지막 위치로 이동시킨다.
-  });
+    'use strict';
+    
+    setTimeout("location.reload()", 1000*10);
+    
+    $(document).ready(function(){
+    	document.body.scrollIntoView(false);		// 스크롤바를 강제로 Body태그의 마지막위치로 이동시킨다.
+    });
   </script>
 </head>
 <body>
 <div class="container">
   <c:forEach var="vo" items="${vos}" varStatus="st">
-    <c:if test="${sNickName == vo.nickName}"><font color="blue">=> ${vo.nickName} : ${vo.chat}</font></c:if>
+    <c:if test="${sNickName == vo.nickName}"><font color="blue">${vo.nickName} : ${vo.chat}</font></c:if>
     <c:if test="${sNickName != vo.nickName}">${vo.nickName} : ${vo.chat}</c:if>
     <br/>
   </c:forEach>

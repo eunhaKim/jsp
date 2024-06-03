@@ -4,21 +4,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>guestInput.jsp</title>
-	<%@ include file = "/include/bs4.jsp" %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>guestInput.jsp</title>
+  <%@ include file = "/include/bs4.jsp" %>
 </head>
 <body>
 <jsp:include page="/include/header.jsp" />
 <jsp:include page="/include/nav.jsp" />
 <p><br/></p>
 <div class="container">
-  <h2>방명록 글쓰기</h2>
+  <h2>방 명 록 글 쓰 기</h2>
   <form name="myform" method="post" action="${ctp}/GuestInputOk" class="was-validated">
     <div class="form-group">
       <label for="name">성명</label>
-      <input type="text" class="form-control" id="name" value="${sMid}" placeholder="Enter username" name="name" required />
+      <input type="text" class="form-control" id="name" value="${sNickName}" placeholder="Enter username" name="name" required />
       <div class="valid-feedback">Ok!!!</div>
       <div class="invalid-feedback">성명을 입력해 주세요.</div>
     </div>
@@ -39,7 +39,7 @@
     <div class="form-group text-center">
     	<button type="submit" class="btn btn-primary mr-3">방명록 등록</button>
     	<button type="reset" class="btn btn-warning mr-3">방명록 다시입력</button>
-    	<button type="button" onclick="${ctp}/GuestList" class="btn btn-danger">돌아가기</button>
+    	<button type="button" onclick="location.href='${ctp}/GuestList';" class="btn btn-danger">돌아가기</button>
     </div>
     <%-- <input type="hidden" name="hostIp" value="<%=request.getRemoteAddr()%>"/> --%>
     <input type="hidden" name="hostIp" value="${pageContext.request.remoteAddr}"/>

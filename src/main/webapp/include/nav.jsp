@@ -8,7 +8,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a> --%>
   <!-- <a class="navbar-brand" href="http://192.168.50.20:9090/javaclass">Home</a> -->
-  <a class="navbar-brand" href="http://192.168.50.70:9090/javaclass/Main">Home</a>
+  <a class="navbar-brand" href="http://192.168.50.20:9090/javaclass/Main">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -76,7 +76,10 @@
 				      <a class="dropdown-item" href="Calendar2.st">달력연습2</a>
 				      <a class="dropdown-item" href="ScrollStudy.st">스크롤 연습</a>
 				      <a class="dropdown-item" href="ScrollBasic.st">무한 스크롤</a>
-				      <a class="dropdown-item" href="Transaction.st">트랜젝션연습</a>
+				      <a class="dropdown-item" href="Transaction.st">트랜잭션연습</a>
+				      <%-- <a class="dropdown-item" href="${ctp}/translator">웹 번역</a> --%>
+				      <a class="dropdown-item" href="Translator.st">웹 번역</a>
+				      <a class="dropdown-item" href="Error.st">에러페이지</a>
 				    </div>
 				  </div>
 	      </li>
@@ -90,6 +93,7 @@
 				      <c:if test="${level <= 4 && (level > 1 || level == 0)}">
 					      <a class="dropdown-item" href="Schedule.sc">일정관리</a>
 					      <a class="dropdown-item" href="WebMessage.wm">메세지관리</a>
+					      <a class="dropdown-item" href="PhotoGallery.ptg">PhotoGallery</a>
 				      	<a class="dropdown-item" href="MemberList.mem">회원리스트</a>
 				      </c:if>
 				      <a class="dropdown-item" href="MemberPwdCheck.mem">회원정보수정</a>
