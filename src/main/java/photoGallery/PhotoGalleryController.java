@@ -35,13 +35,48 @@ public class PhotoGalleryController extends HttpServlet {
 			command.execute(request, response);
 			viewPage += "/photoGalleryList.jsp";
 		}
+		else if(com.equals("/PhotoGalleryPaging")) {
+			command = new PhotoGalleryCommand();
+			command.execute(request, response);
+			viewPage += "/photoGalleryPaging.jsp";
+		}
 		else if(com.equals("/PhotoGalleryInput")) {
 			viewPage += "/photoGalleryInput.jsp";
 		}
-//		else if(com.equals("/PhotoGalleryInputOk")) {
-//			command = new PhotoGalleryInputOkCommand();
+		else if(com.equals("/PhotoGallerContent")) {
+			command = new PhotoGallerContentCommand();
+			command.execute(request, response);
+			viewPage += "/photoGallerContent.jsp";
+		}
+		else if(com.equals("/PhotoGalleryReplyInput")) {
+			command = new PhotoGalleryReplyInputCommand();
+			command.execute(request, response);
+			return;
+		}
+		else if(com.equals("/PhotoGalleryReplyDelete")) {
+			command = new PhotoGalleryReplyDeleteCommand();
+			command.execute(request, response);
+			return;
+		}
+		else if(com.equals("/PhotoGalleryGoodCheck")) {
+			command = new PhotoGalleryGoodCheckCommand();
+			command.execute(request, response);
+			return;
+		}
+		else if(com.equals("/PhotoGallerySingle")) {
+			command = new PhotoGallerySingleCommand();
+			command.execute(request, response);
+			viewPage += "/photoGallerySingle.jsp";
+		}
+		else if(com.equals("/PhotoGallerySinglePaging")) {
+			command = new PhotoGallerySingleCommand();
+			command.execute(request, response);
+			viewPage += "/photoGallerySinglePaging.jsp";
+		}
+//		else if(com.equals("/PhotoGallerySinglePaging")) {
+//			command = new PhotoGallerySinglePagingCommand();
 //			command.execute(request, response);
-//			viewPage = "/include/message.jsp";
+//			viewPage += "/photoGallerySinglePaging.jsp";
 //		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);

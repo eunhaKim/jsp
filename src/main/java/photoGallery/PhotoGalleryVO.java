@@ -19,7 +19,11 @@ public class PhotoGalleryVO {
 	// photoReply.sql
 	private int replyIdx;
 	private String replyMid;
+	private int replyPhotoIdx;
 	private String content;
+	private String prDate;
+	
+	private int replyCnt;	// 댓글 개수
 	
 	public int getIdx() {
 		return idx;
@@ -105,12 +109,31 @@ public class PhotoGalleryVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	public String getPrDate() {
+		return prDate;
+	}
+	public void setPrDate(String prDate) {
+		this.prDate = prDate;
+	}
+	public int getReplyPhotoIdx() {
+		return replyPhotoIdx;
+	}
+	public void setReplyPhotoIdx(int replyPhotoIdx) {
+		this.replyPhotoIdx = replyPhotoIdx;
+	}
+	public int getReplyCnt() {
+		return replyCnt;
+	}
+	public void setReplyCnt(int replyCnt) {
+		this.replyCnt = replyCnt;
+	}
 	
 	@Override
 	public String toString() {
 		return "PhotoGalleryVO [idx=" + idx + ", mid=" + mid + ", part=" + part + ", title=" + title + ", photoCount="
 				+ photoCount + ", hostIp=" + hostIp + ", pDate=" + pDate + ", goodCount=" + goodCount + ", readNum=" + readNum
 				+ ", storageIdx=" + storageIdx + ", fSName=" + fSName + ", replyIdx=" + replyIdx + ", replyMid=" + replyMid
-				+ ", content=" + content + "]";
+				+ ", replyPhotoIdx=" + replyPhotoIdx + ", content=" + content + ", prDate=" + prDate + ", replyCnt=" + replyCnt
+				+ "]";
 	}
 }

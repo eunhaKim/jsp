@@ -14,11 +14,11 @@ public class ModalTestCommand implements StudyInterface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String mid =request.getParameter("mid")==null ? "" : request.getParameter("mid");
+		String mid = request.getParameter("mid")==null ? "" : request.getParameter("mid");
 		
 		MemberDAO dao = new MemberDAO();
+		
 		MemberVO mVo = dao.getMemberIdCheck(mid);
-//		System.out.println(mVo);
 		
 		request.setAttribute("mVo", mVo);
 	}

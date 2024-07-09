@@ -55,6 +55,8 @@
       <select name="part" id="part" class="form-control">
         <option value="풍경" selected>풍경</option>
         <option value="인물">인물</option>
+        <option value="음식">음식</option>
+        <option value="여행">여행</option>
         <option value="학습">학습</option>
         <option value="사물">사물</option>
         <option value="기타">기타</option>
@@ -69,7 +71,7 @@
     </div>
     <div class="row">
     	<div class="col"><input type="button" value="파일전송" onclick="fCheck()" class="btn btn-success"/></div>
-    	<div class="col text-right"><input type="button" value="돌아가기" onclick="location.href='PhotoGalleryList.ptg';" class="btn btn-warning"/></div>
+    	<div class="col text-right"><input type="button" value="돌아가기" onclick="location.href='PhotoGallery.ptg';" class="btn btn-warning"/></div>
     </div>
     <input type="hidden" name="mid" value="${sMid}" />
     <input type="hidden" name="hostIp" value="${pageContext.request.remoteAddr}" />

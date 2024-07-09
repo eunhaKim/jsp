@@ -19,7 +19,7 @@ import study2.hoewon.HoewonInputCommand;
 import study2.hoewon.HoewonMainCommand;
 import study2.hoewon.HoewonSearchCommand;
 import study2.hoewon.HoewonUpdateCommand;
-import study2.modal.ModelTestCommand;
+import study2.modal.ModalTestCommand;
 import study2.pdstest.FileDeleteCheckCommand;
 import study2.pdstest.FileDeleteCommand;
 import study2.pdstest.FileDownLoadCommand;
@@ -103,7 +103,7 @@ public class StudyController extends HttpServlet {
 			viewPage += "/modal/modal1.jsp";
 		}
 		else if(com.equals("Modal2")) {
-			command = new ModelTestCommand();
+			command = new ModalTestCommand();
 			command.execute(request, response);
 			viewPage += "/modal/modal2.jsp";
 		}

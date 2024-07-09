@@ -33,6 +33,7 @@ public class PhotoGalleryInputOk extends HttpServlet {
 		Collection<Part> fileParts = request.getParts();
 		
 		String fSNames = "";
+		int cnt = 0;
 		for(Part filePart : fileParts) {
 			if(!filePart.getName().equals("fName")) continue;
 			if(filePart.getSize() == 0) continue;
@@ -54,6 +55,7 @@ public class PhotoGalleryInputOk extends HttpServlet {
 			fis.close();
 			
 			fSNames +=fileName + "/";
+			cnt++;
 		}
 		fSNames = fSNames.substring(0, fSNames.length()-1);
 		
@@ -70,14 +72,20 @@ public class PhotoGalleryInputOk extends HttpServlet {
 		vo.setMid(mid);
 		vo.setPart(part);
 		vo.setTitle(title);
-		vo.setPhotoCount(fileParts.size());
+		vo.setPhotoCount(cnt);
 		vo.setHostIp(hostIp);
 		vo.setfSName(fSNames);
 		
 		int res = dao.setPhotoGalleryInput(vo);
 		
-		request.setAttribute("message", "파일이 업로드 되었습니다.");
-		request.setAttribute("url", "PhotoGallery.ptg");
+		if(res != 0) {
+			request.setAttribute("message", "파일이 업로드 되었습니다.");
+			request.setAttribute("url", "PhotoGallery.ptg");
+		}
+		else {
+			request.setAttribute("message", "파일 업로드 실패~");
+			request.setAttribute("url", "PhotoGalleryInput.ptg");
+		}
 		
 		String viewPage = "/include/message.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
